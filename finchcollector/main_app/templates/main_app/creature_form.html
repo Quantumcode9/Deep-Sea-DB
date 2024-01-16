@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    {% if object %}
+        <h3>Edit {{ object.name }}</h3>
+    {% else %}
+        <h3>Add a Creature</h3>
+    {% endif %}
+
+    <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {% for field in form %}
+            <div class="form-group">
+                <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                {{ field|add_class:"form-control" }}
+                {% if field.help_text %}
+                    <small class="form-text text-muted">{{ field.help_text }}</small>
+                {% endif %}
+                {% for error in field.errors %}
+                    <div class="alert alert-danger">{{ error }}</div>
+                {% endfor %}
+            </div>
+        {% endfor %}
+        <input type="submit" value="Save" class="btn btn-primary">
+    </form>
+
+{% endblock %}

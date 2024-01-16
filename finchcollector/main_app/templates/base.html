@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Deep Sea Collector</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="{% static '/main_app/css/styles.css' %}">
 </head>
 <body>
@@ -20,8 +21,9 @@
                     </li>
                 </ul>
                 <ul class="right">
-                    <li><a href="/about">About</a></li>
-                    <li><a href="/creatures">Creatures</a></li>
+                    <li><a href="{% url 'index' %}">Creatures</a></li>
+                    <li><a href="{% url 'about' %}">About</a></li>
+                    <li><a href="{% url 'creatures_create' %}">Add Creature</a></li>
                 </ul>
             </div>
         </nav>

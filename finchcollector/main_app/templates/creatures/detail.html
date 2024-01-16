@@ -34,6 +34,8 @@
 <p>Description: {{ creature.description }}</p>
 </div>
 
-
+<div class="card-acrion">
+    <a href="{% url 'creatures_update' creature.id %}" class="btn">Edit</a>
+    <a href="{% url 'creatures_delete' creature.id %}" class="btn red">Delete</a>
 
 {%endblock%}

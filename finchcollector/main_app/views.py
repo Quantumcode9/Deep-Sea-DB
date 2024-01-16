@@ -2,6 +2,8 @@ from django.shortcuts import render
 
 # Create your views here.
 
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
+
 from django.shortcuts import render
 
 from .models import Creature
@@ -28,3 +30,19 @@ def creature_detail(request, creature_id):
     creature = Creature.objects.get(id=creature_id)
     return render(request, 'creatures/detail.html', {'creature': creature})
 
+# Using class-based views
+class CreatureCreate(CreateView):
+    model = Creature
+    fields = '__all__'
+    success_url = '/creatures/'
+    
+class CreatureUpdate(UpdateView):
+    model = Creature
+    fields = ['name', 'scientific_name', 'family', 'diet', 'description', 'habitat', 'picture', 'predators', 'prey', 'appearance']
+    
+    
+class CreatureDelete(DeleteView):
+    model = Creature
+    success_url = '/creatures/'  
+    
+    

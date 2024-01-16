@@ -12,7 +12,10 @@ urlpatterns = [
     path('', views.home, name='home'),
     path('about/', views.about, name='about'),
     path('creatures/', views.creature_index, name='index'),
-    path('creatures/<int:creature_id>/', views.creature_detail, name='detail')
+    path('creatures/<int:creature_id>/', views.creature_detail, name='detail'),
+    path('creatures/create/', views.CreatureCreate.as_view(), name='creatures_create'),
+    path('creatures/<int:pk>/update/', views.CreatureUpdate.as_view(), name='creatures_update'),
+    path('creatures/<int:pk>/delete/', views.CreatureDelete.as_view(), name='creatures_delete'),
 ]
 
 
