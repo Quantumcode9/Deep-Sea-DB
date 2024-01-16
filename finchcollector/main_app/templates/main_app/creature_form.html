@@ -12,10 +12,7 @@
         {% for field in form %}
             <div class="form-group">
                 <label for="{{ field.id_for_label }}">{{ field.label }}</label>
-                {{ field|add_class:"form-control" }}
-                {% if field.help_text %}
-                    <small class="form-text text-muted">{{ field.help_text }}</small>
-                {% endif %}
+                <input id="{{ field.id_for_label }}" type="text" class="form-field" value="{{ field.value }}">
                 {% for error in field.errors %}
                     <div class="alert alert-danger">{{ error }}</div>
                 {% endfor %}
