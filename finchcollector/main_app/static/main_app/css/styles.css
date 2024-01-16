@@ -1,0 +1,76 @@
+body {
+    background-color: #000026;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+.card {
+    background-color: black;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: white;
+    margin: 0;
+    padding: 10px;
+}
+
+h1{
+    font-family: 'Roboto', sans-serif;
+    font-size: 50px;
+    line-height: 1.5;
+    color: white;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+h2{
+    font-family: 'Roboto', sans-serif;
+    font-size: 30px;
+    line-height: 1.5;
+    color: white;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.card2, .card {
+    flex: 1;
+    margin: 10px;
+}
+
+.card-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* @media (max-width: 600px) {
+    .card2, .card {
+        flex: 1 0 100%;
+    }
+}  */
+
+.card img {
+    width: 300px;  
+    height: 200px; 
+    object-fit: cover;  
+}
+
+.card img:hover {
+    opacity: 0.5;
+}
+
+.card2 img {
+    width: 500px;  
+    height: 400px; 
+    object-fit: cover;  
+}
+
+
+
+
+
+/* Path: finchcollector/main_app/static/main_app/css/styles.css */

@@ -1,0 +1,39 @@
+
+{%extends 'base.html' %}
+{%block content %}
+
+<h1>{{ creature.name }}'s Details</h1>
+
+<h2>Scientific Name: {{ creature.scientific_name }}</h2>
+<div class="card-container">
+{% if creature.picture %}
+<div class="card2">
+    <img src="{{ creature.picture.url }}" alt="{{ creature.name }}">
+</div>
+    {% endif %}
+
+    <div class="card">
+        <div class="card-content">
+    <p>Diet: {{ creature.diet }}</p>
+    <p>Location: {{ creature.habitat }}</p>
+    <p>Size: {{ creature.size }}</p>
+    <p>Family: {{ creature.family }}</p>
+    <p>Habitat: {{ creature.habitat }}</p>
+    <p>Predators: {{ creature.predators }}</p>
+    <p>Prey: {{ creature.prey }}</p>
+    </div>
+    </div>
+</div>
+
+<div class="card">
+    <p>Appearance: {{ creature.appearance }}</p>
+    </div>
+
+
+<div class="card">
+<p>Description: {{ creature.description }}</p>
+</div>
+
+
+
+{%endblock%}

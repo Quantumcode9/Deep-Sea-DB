@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <h1>What Dwells in the depths</h1>
+
+    {% for creature in creatures %}
+    <div class="card">
+        <a href="{% url 'detail' creature.id %}">
+            <h2>{{ creature.name }}</h2>
+            {% if creature.picture %}
+                <img src="{{ creature.picture.url }}" alt="{{ creature.name }}">
+            {% else %}
+                <p>No image available</p>
+            {% endif %}
+            <div class="card-content">
+                <span class="card-title">{{ creature.name }}</span>
+            </div>
+        </a>
+    </div>
+{% endfor %}
+
+{% endblock %}
+```
+
